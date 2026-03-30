@@ -6,51 +6,45 @@
 <title>Job Portal</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
 <nav class="navbar">
-    <h2>JobPortal</h2>
-    <input type="text" id="search" placeholder="Search jobs...">
+<h2>JobPortal</h2>
+<input type="text" id="search" placeholder="Search jobs...">
 </nav>
 
-<!-- FILTERS -->
-<div class="filters" style="text-align:center; margin: 20px;">
-    <select id="roleFilter">
-        <option value="">All Roles</option>
-        <option value="Frontend Developer">Frontend Developer</option>
-        <option value="Backend Developer">Backend Developer</option>
-        <option value="Full Stack Developer">Full Stack Developer</option>
-        <option value="UI/UX Designer">UI/UX Designer</option>
-        <option value="Data Scientist">Data Scientist</option>
-    </select>
+<div class="filters">
+<select id="roleFilter">
+<option value="">All Roles</option>
+<option value="Frontend Developer">Frontend Developer</option>
+<option value="Backend Developer">Backend Developer</option>
+<option value="Full Stack Developer">Full Stack Developer</option>
+<option value="UI/UX Designer">UI/UX Designer</option>
+<option value="Data Scientist">Data Scientist</option>
+</select>
 
-    <select id="locationFilter">
-        <option value="">All Locations</option>
-        <option value="Bangalore">Bangalore</option>
-        <option value="Hyderabad">Hyderabad</option>
-        <option value="Pune">Pune</option>
-        <option value="Mumbai">Mumbai</option>
-    </select>
+<select id="locationFilter">
+<option value="">All Locations</option>
+<option value="Bangalore">Bangalore</option>
+<option value="Hyderabad">Hyderabad</option>
+<option value="Pune">Pune</option>
+<option value="Mumbai">Mumbai</option>
+</select>
 </div>
 
-<!-- SAVED JOBS -->
-<h2 style="text-align:center;">Saved Jobs</h2>
+<h2>Saved Jobs</h2>
 <section class="jobs" id="savedJobs"></section>
 
-<!-- JOB LIST -->
 <section class="jobs" id="jobList"></section>
 
-<!-- APPLY POPUP -->
 <div id="popup" class="popup">
-    <div class="popup-content">
-        <h2>Apply for Job</h2>
-        <input type="text" placeholder="Your Name"><br>
-        <input type="email" placeholder="Your Email"><br><br>
-        <button onclick="submitForm()">Submit</button>
-        <button onclick="closePopup()">Close</button>
-    </div>
+<div class="popup-content">
+<h2>Apply for Job</h2>
+<input type="text" placeholder="Your Name"><br>
+<input type="email" placeholder="Your Email"><br><br>
+<button onclick="submitForm()">Submit</button>
+<button onclick="closePopup()">Close</button>
+</div>
 </div>
 
 <script src="script.js"></script>

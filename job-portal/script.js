@@ -1,92 +1,36 @@
-let jobsData = [];
-const jobList = document.getElementById("jobList");
-const savedJobsContainer = document.getElementById("savedJobs");
+let jobs = [];
+let savedJobs = [];
 
-// FETCH JOBS FROM JSON
-fetch("jobs.json")
-    .then(response => response.json())
-    .then(data => {
-        jobsData = data;
-        displayJobs(jobsData);
-    });
+fetch('jobs.json')
+.then(res => res.json())
+.then(data => { jobs = data; displayJobs(jobs); });
 
-// DISPLAY JOBS FUNCTION
-function displayJobs(jobs) {
-    jobList.innerHTML = "";
-    jobs.forEach(job => {
-        const div = document.createElement("div");
-        div.className = "job-card";
-        div.innerHTML = `
-            <h3>${job.title}</h3>
-            <p>Company: ${job.company}</p>
-            <p>Location: ${job.location}</p>
-            <button onclick="openPopup()">Apply</button>
-            <button onclick="saveJob(this)">❤️ Save</button>
-        `;
+function displayJobs(list) {
+    const jobList = document.getElementById('jobList');
+    jobList.innerHTML = '';
+    list.forEach(job => {
+        const div = document.createElement('div');
+        div.className = 'job-card';
+        div.innerHTML = `<h3>${job.title}</h3><p>${job.location}</p>
+        <button onclick="openPopup('${job.title}')">Apply</button>
+        <button onclick="saveJob('${job.title}')">Save</button>`;
         jobList.appendChild(div);
     });
 }
 
-// SEARCH FUNCTION
-document.getElementById("search").addEventListener("keyup", function() {
-    const filter = this.value.toLowerCase();
-    const filtered = jobsData.filter(job => 
-        job.title.toLowerCase().includes(filter) ||
-        job.company.toLowerCase().includes(filter) ||
-        job.location.toLowerCase().includes(filter)
-    );
+function openPopup(title){ document.getElementById('popup').style.display='flex'; }
+function closePopup(){ document.getElementById('popup').style.display='none'; }
+function submitForm(){ alert('Application submitted!'); closePopup(); }
+function saveJob(title){ 
+    if(!savedJobs.includes(title)){ savedJobs.push(title); alert(title+' saved!'); } 
+    displaySavedJobs(); 
+}
+function displaySavedJobs(){
+    const savedDiv = document.getElementById('savedJobs');
+    savedDiv.innerHTML = savedJobs.map(j=>`<div class="job-card">${j}</div>`).join('');
+}
+
+document.getElementById('search').addEventListener('input', e => {
+    const filtered = jobs.filter(j=>j.title.toLowerCase().includes(e.target.value.toLowerCase()));
     displayJobs(filtered);
 });
-
-// FILTERS
-document.getElementById("roleFilter").addEventListener("change", filterJobs);
-document.getElementById("locationFilter").addEventListener("change", filterJobs);
-
-function filterJobs() {
-    const role = document.getElementById("roleFilter").value;
-    const location = document.getElementById("locationFilter").value;
-
-    let filtered = jobsData;
-
-    if (role) filtered = filtered.filter(job => job.title === role);
-    if (location) filtered = filtered.filter(job => job.location === location);
-
-    displayJobs(filtered);
-}
-
-// POPUP FUNCTIONS
-function openPopup() { document.getElementById("popup").style.display = "block"; }
-function closePopup() { document.getElementById("popup").style.display = "none"; }
-function submitForm() { alert("Application submitted!"); closePopup(); }
-
-// SAVE JOB FUNCTION
-function saveJob(button) {
-    const jobCard = button.parentElement;
-    const jobText = jobCard.innerText;
-
-    let savedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
-
-    if (!savedJobs.includes(jobText)) {
-        savedJobs.push(jobText);
-        localStorage.setItem("jobs", JSON.stringify(savedJobs));
-        alert("Job saved!");
-        loadSavedJobs();
-    } else {
-        alert("Already saved!");
-    }
-}
-
-// LOAD SAVED JOBS
-function loadSavedJobs() {
-    const savedJobs = JSON.parse(localStorage.getItem("jobs")) || [];
-    savedJobsContainer.innerHTML = "";
-
-    savedJobs.forEach(job => {
-        const div = document.createElement("div");
-        div.className = "job-card";
-        div.innerText = job;
-        savedJobsContainer.appendChild(div);
-    });
-}
-
-window.onload = loadSavedJobs;

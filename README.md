@@ -21,22 +21,29 @@ This project demonstrates a complete SaaS landing page including pricing plans, 
 
 ## 🌐 Live Demo
 
-## 🌐 Live Demo
-
 https://suregopi.github.io/growthx-saas-website/
-
-## Live Demo
-
-https://suregopi.github.io/growthx-saas-website/
-
-## 📸 Screenshots
 
 ## 📸 Screenshots
 
 ![Home](screenshot2.png)
 ![Pricing](screenshot3.png)
 
-
 ## 👨‍💻 Author
 
 Gopi
+
+---
+
+# Job Portal Website 🚀
+
+Dynamic Job Portal with search, filter, apply popup & save jobs functionality.
+
+## Features
+- Dynamic jobs from JSON
+- Search & filters
+- Apply popup form
+- Save jobs & view saved jobs
+- Responsive & clean UI
+
+## Tech Stack
+- HTML, CSS, JavaScript
