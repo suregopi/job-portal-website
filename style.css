@@ -19,12 +19,19 @@ body {
     border: none;
 }
 
+/* FILTERS */
+.filters select {
+    padding: 8px 12px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
 /* JOB SECTION */
 .jobs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 40px;
+    padding: 20px 40px;
     gap: 20px;
 }
 
@@ -36,6 +43,7 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     transition: 0.3s;
+    text-align: center;
 }
 
 .job-card:hover {
@@ -44,7 +52,7 @@ body {
 
 /* BUTTON */
 .job-card button {
-    margin-top: 10px;
+    margin: 5px;
     padding: 8px 15px;
     border: none;
     background: #4F46E5;
@@ -55,4 +63,30 @@ body {
 
 .job-card button:hover {
     background: #3730a3;
+}
+
+/* POPUP */
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+.popup-content {
+    background: white;
+    padding: 30px;
+    width: 300px;
+    margin: 100px auto;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.popup-content input {
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0;
 }
