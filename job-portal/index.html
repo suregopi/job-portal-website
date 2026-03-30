@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Job Portal</title>
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="../style.css">
 </head>
 <body>
 
@@ -22,7 +22,6 @@
 <option value="UI/UX Designer">UI/UX Designer</option>
 <option value="Data Scientist">Data Scientist</option>
 </select>
-
 <select id="locationFilter">
 <option value="">All Locations</option>
 <option value="Bangalore">Bangalore</option>
@@ -32,12 +31,12 @@
 </select>
 </div>
 
-<h2>Saved Jobs</h2>
+<h2 style="text-align:center;">Saved Jobs</h2>
 <section class="jobs" id="savedJobs"></section>
 
 <section class="jobs" id="jobList"></section>
 
-<div id="popup" class="popup">
+<div id="popup">
 <div class="popup-content">
 <h2>Apply for Job</h2>
 <input type="text" placeholder="Your Name"><br>
@@ -47,6 +46,6 @@
 </div>
 </div>
 
-<script src="script.js"></script>
+<script src="../script.js"></script>
 </body>
 </html>

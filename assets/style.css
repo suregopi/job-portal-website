@@ -1,0 +1,57 @@
+/* General */
+body { margin:0; font-family:'Poppins',sans-serif; color:#333; scroll-behavior:smooth; }
+h1,h2,h3,p { margin:0; }
+button { cursor:pointer; border:none; border-radius:5px; }
+
+/* NAVBAR */
+.navbar { position:sticky; top:0; background:#fff; display:flex; justify-content:space-between; align-items:center; padding:15px 40px; box-shadow:0 2px 10px rgba(0,0,0,0.1); z-index:1000; }
+.navbar h2 { margin:0; }
+.navbar a { margin:0 10px; text-decoration:none; color:#333; font-weight:500; }
+.navbar a:hover { color:#4F46E5; }
+.navbar input { padding:8px; width:200px; }
+
+/* HERO (GrowthX) */
+.hero { background:linear-gradient(135deg,#4F46E5,#7C3AED); color:#fff; text-align:center; padding:120px 20px; }
+.hero h1 { font-size:42px; }
+.hero p { margin:20px 0; }
+.btn-primary { background:#fff; color:#4F46E5; padding:12px 25px; border-radius:30px; transition:0.3s; }
+.btn-primary:hover { transform:scale(1.1); }
+.btn-secondary { background:transparent; border:1px solid #fff; color:#fff; padding:12px 25px; }
+.btn-secondary:hover { background:#fff; color:#4F46E5; }
+
+/* FEATURES / CARDS */
+.features, .pricing-cards { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; padding:50px 20px; }
+.feature-box, .card { background:#fff; padding:25px; border-radius:10px; text-align:center; transition:0.3s; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+.feature-box:hover, .card:hover { transform:translateY(-10px); }
+.popular { border:2px solid #22c55e; transform:scale(1.05); }
+
+/* ABOUT */
+.about { display:flex; gap:40px; flex-wrap:wrap; padding:50px; }
+.about img { width:300px; border-radius:10px; }
+
+/* TESTIMONIALS */
+.testimonials { background:#f9fafb; text-align:center; padding:50px; }
+.testimonial-card { display:inline-block; width:250px; margin:10px; padding:20px; border-radius:10px; background:#fff; transition:0.3s; }
+.testimonial-card:hover { transform:scale(1.05); }
+
+/* CTA */
+.cta { background:linear-gradient(135deg,#4F46E5,#7C3AED); color:#fff; text-align:center; padding:50px; }
+.cta button { padding:12px 25px; border-radius:30px; background:#fff; color:#4F46E5; margin-top:20px; }
+
+/* CONTACT */
+.contact { text-align:center; padding:50px; }
+.contact input, .contact textarea { width:300px; padding:10px; margin:10px; }
+.contact button { padding:10px 20px; background:#4F46E5; color:#fff; border-radius:5px; }
+
+/* JOB PORTAL */
+.jobs { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; padding:20px; }
+.job-card { background:#fff; padding:20px; border-radius:10px; width:280px; box-shadow:0 5px 15px rgba(0,0,0,0.1); }
+.job-card button { margin-top:10px; padding:8px 15px; border-radius:5px; background:#4F46E5; color:#fff; }
+#popup { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); justify-content:center; align-items:center; }
+.popup-content { background:#fff; padding:30px; border-radius:10px; text-align:center; }
+
+/* FOOTER */
+footer { text-align:center; background:#111; color:#fff; padding:25px; }
+
+/* MEDIA */
+@media(max-width:768px){ .hero h1{ font-size:28px; } .features,.about,.pricing-cards{ flex-direction:column; align-items:center; } .navbar input{ width:120px; } }
