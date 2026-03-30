@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Job Portal</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>JobPortal</h2>
+    <input type="text" id="search" placeholder="Search jobs...">
+</nav>
+
+<!-- JOB LIST -->
+<section class="jobs" id="jobList">
+
+    <div class="job-card">
+        <h3>Frontend Developer</h3>
+        <p>Company: Google</p>
+        <button onclick="openPopup()">Apply</button>
+    </div>
+
+    <div class="job-card">
+        <h3>Backend Developer</h3>
+        <p>Company: Amazon</p>
+        <button onclick="openPopup()">Apply</button>
+    </div>
+
+    <div class="job-card">
+        <h3>Full Stack Developer</h3>
+        <p>Company: Microsoft</p>
+        <button onclick="openPopup()">Apply</button>
+    </div>
+
+</section>
+
+<!-- POPUP -->
+<div id="popup" class="popup">
+    <div class="popup-content">
+        <h2>Apply for Job</h2>
+        <input type="text" placeholder="Your Name"><br>
+        <input type="email" placeholder="Your Email"><br><br>
+        <button onclick="submitForm()">Submit</button>
+        <button onclick="closePopup()">Close</button>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
